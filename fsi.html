@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/webslides@1.5.0/static/css/webslides.css"> -->
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+        <style>
+
+            .grid-container-three {
+              display: grid;
+              grid-template-columns: auto auto auto;
+              gap: 10px;
+              background-color: white;
+              padding: 10px;
+            }
+
+            .grid-container-three div {
+              background-color: #e3e3e3;
+              text-align: center;
+              padding: 20px 0;
+            }
+
+            .gc-span {
+                text-align: center;
+                font-size: 30px;
+            }
+            body{
+                margin: 0px;
+                padding: 0px;
+            }
+
+            .page-one {
+                height: 75vh;
+                width: 100%;
+            }
+
+            .page-one::after {
+                content: "";
+                /*background: url("./frayed_rope.jpeg") no-repeat center center;*/
+                /*-webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;*/
+                background: url("./frayed_rope.jpeg") no-repeat center top;
+                -webkit-background-size: 100% 75vh;
+                -moz-background-size: 100% 75vh;
+                -o-background-size: 100% 75vh;
+                background-size: 100% 75vh;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                position: absolute;
+                background-attachment: scroll;
+                z-index: -1;
+            }
+
+            .page-one-h1 {
+                padding-top: 100px;
+                color: #f5f5dc;
+                opacity: .7;
+                font-size: 64pt;
+                text-align: center;
+                text-shadow: -1px 1px 0px #f5f5dc, 
+                        1px 1px 0 #f5f5dc, 
+                        1px -1px 0 #f5f5dc,
+                        -1px -1px 0 #f5f5dc;
+            }
+
+            .page-one-subheader {
+                color: #f5f5dc;
+                font-size: 32pt;
+                text-align: center;
+            }
+
+            .page1-button {
+                background-color: #ede9df;
+                color: #494b7b;
+                padding: 10px 24px;
+                text-align: center;
+                text-decoration: none;
+                /*display: inline-block;*/
+                float: left;
+                border: none;
+                font-size: 16px;
+                /*margin: 4px 2px;*/
+                cursor: pointer;
+            }
+
+            .page2-button {
+                background-color: white;
+                color: #494b7b;
+                padding: 10px 24px;
+                text-align: center;
+                text-decoration: none;
+                /*display: inline-block;*/
+                float: left;
+                border: none;
+                font-size: 16px;
+                /*margin: 4px 2px;*/
+                cursor: pointer;
+            }
+
+            .page2-container {
+                width: 100%;
+                height: 100vh;
+            }
+
+            .highcharts-credits {
+                display: none !important;
+            }
+
+            .cdo-outer-container {
+                width: 100vw;
+            }
+
+            .cdo-inner-container {
+                width: 100%;
+                padding-top: 3%;
+                padding-bottom: 3%;
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .cdo-bg-white {
+                background-color: #FFF;
+            }
+
+            .cdo-bg-one {
+                background-color: #F8F9F9;
+            }
+
+            .cdo-bg-white h1, h2, h3, h4 {
+                font-weight: 700;
+                color:#111
+            }
+
+            .cdo-bg-white p, li, a {
+                font-weight: 600;
+                color:#888
+            }
+
+            .cdo-bg-one h1, .cdo-bg-one h2, .cdo-bg-one h3, .cdo-bg-one h4 {
+    font-weight: 700;
+    color:#111
+}
+
+.cdo-bg-one p, .cdo-bg-one li, .cdo-bg-one a {
+    font-weight: 600;
+    color:#888
+}
+            header,
+footer,
+#navigation {
+  padding: 2.4rem;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  width: 100%; }
+
+header p,
+footer p {
+  line-height: 4.8rem;
+  margin-bottom: 0; }
+
+header[role='banner'] img,
+footer img {
+  height: 4rem;
+  vertical-align: middle; }
+
+footer {
+  position: relative; }
+
+header,
+footer {
+  z-index: 3; }
+
+header,
+.ws-ready footer {
+  left: 0;
+  position: absolute;
+  top: 0; }
+
+.ws-ready footer {
+  bottom: 0;
+  top: auto; }
+
+header[role='banner'] {
+  opacity: 0; }
+  header[role='banner']:hover {
+    opacity: 1; }
+
+header[role='banner'] {
+  background-color: #fff; }
+
+.logo a {
+  color: inherit; }
+
+nav[role='navigation'] li.active a {
+  background-color: #555;
+  color: #fff; }
+
+nav[role='navigation'] li a {
+  background-color: rgba(50, 50, 50, 0.9);
+  color: #fff; }
+  nav[role='navigation'] li a:hover {
+    background-color: rgba(50, 50, 50, 0.7); }
+
+select {
+    width: 90%;
+    height: 5vh;
+    -webkit-appearance: menulist-button;  
+    -moz-appearance:none;
+}
+
+.nav-clearance {
+    padding-top: 8%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.header-title {
+    font-size: 60px;
+}
+
+.header2-title {
+    font-size: 45px;
+}
+        </style>
+    </head>
+
+	<body>
+
+        <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script
+
+        <!-- Highcharts javascript files -->
+		<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+		<script src="https://code.highcharts.com/maps/modules/data.js"></script>
+		<script src="https://code.highcharts.com/maps/modules/accessibility.js"></script>
+		<script src="https://code.highcharts.com/mapdata/custom/africa.js"></script>
+
+        <!-- Data files -->
+		<script src="./fsiAnnualData.js"></script>
+        <script src="./fsiYearData.js"></script>
+        <script src="./fsiCountryData.js"></script>
+        <script src="./fsiDropdownData.js"></script>
+        <script src="./fsiMetricData.js"></script>
+        <script src="./fsiContinentMaxData.js"></script>
+        <script src="./fsiWorldMaxData.js"></script>
+        <script src="./fsiDiffData.js"></script>
+
+		<!-- Flag sprites service provided by Martijn Lafeber, https://github.com/lafeber/world-flags-sprite/blob/master/LICENSE -->
+		<link rel="stylesheet" type="text/css" href="https://github.com/downloads/lafeber/world-flags-sprite/flags32.css" />
+
+        <header role="banner">
+            <nav role="navigation">
+                <!-- <button class="page2-button" onclick="location.href='../home/index.html'" title="CDO">ACDAO Home</a> -->
+                <button class="page2-button" onclick="openPage('page1')">About</button>
+                <button class="page2-button" onclick="openPage('page2')">Fragile States Index</button>
+                <button class="page2-button" onclick="openPage('page3')">Country Dashboard</button>
+            </nav>
+        </header>
+
+        <div id="page1" class="page">
+            <div class="page-one">
+                <h1 class="page-one-h1" style="color: #f5f5dc;">Fragile States Index</h1>
+            </div>
+            <div class="cdo-outer-container cdo-bg-white">
+                <div class="cdo-inner-container">
+                    <h1 class="header-title">About</h1>
+
+                    <br>
+
+                    <h3>CLASSIFICATION: <span style="color: green;">UNCLASSIFIED</span></h3>
+
+                    <br>
+
+                    <h3>PERIOD OF UDPATE: ANNUAL</h3>
+
+                    <br>
+
+                    <h3>ORIGINS OF THE FRAGILE STATES INDEX: THE CAST FRAMEWORK</h3>
+                    <p>The Fragile States Index (FSI) traces its origins to the creation of the Fund for Peace’s Conflict Assessment System Tool (CAST), that was developed in the 1990s as a framework for policymakers and field practitioners to be able to better understand and measure conflict drivers and dynamics in complex environments. The CAST framework has been widely peer reviewed, and the continued usage of the framework by many of those same professionals, as well as now by local civil society and community groups in conflict-affected areas, is testament to the framework’s enduring relevance. In 2004, the CAST framework was used as the basis for the FSI, as researchers wished to determine whether state fragility could be assessed and ranked at a national level using the existing framework.</p>
+
+                    <br>
+
+                    <h3>PRACTICAL APPLICATION: THE FRAGILE STATES INDEX ANALYTICAL PROCESS</h3>
+                    <p>Though at the ground level, the CAST framework is applied using various practices such as individual incident reporting and observation by field monitors, the sheer volume of data to be analyzed at an international level required a different approach. To that end, technology was employed to enable researchers to process large volumes of data to perform the national level assessments that feed in to the FSI.</p>
+
+                    <p>Based on CAST’s comprehensive social science approach, data from three main streams — pre-existing quantitative data sets, content analysis, and qualitative expert analysis — is triangulated and subjected to critical review to obtain final scores for the Index.</p>
+
+                    <ol>
+
+                        <li>Content Analysis: Each of the twelve indicators of the CAST framework are broken down into sub-indicators, and for each of these, hundreds of Boolean search phrases are applied to global media data to determine the level of saliency of issues for each of those sub-indicators in each country. The raw data, provided by a commercial content aggregator, includes media articles, research reports, and other qualitative data points collected from over 10,000 different English-language sources around the world. Every year, the number of articles and reports analyzed is between 45-50 million. Based on the assessed saliency for each of the sub-indicators, provisional scores are apportioned for each country.</li>
+                        <li>Quantitative Data: Pre-existing quantitative data sets, generally from international and multilateral statistical agencies (such as the United Nations, World Bank, World Health Organization) are identified for their ability to statistically represent key aspects of the indicators. The raw data sets are normalized and scaled for comparative analysis. The trends identified in the quantitative analysis for each country are then integrated with the results from the Content Analysis phase.</li>
+                        <li>Qualitative Review: Separately, a team of social science researchers independently reviews each of the 178 countries, providing assessments based on key events from that year, compared to the previous one. Recognizing that every data set and approach has different strengths and weaknesses, this step helps to ensure that dynamic year-on-year trends across different indicators are picked up – which may not be evident in lagging quantitative data sets that measure longer term structural factors. It also helps to mitigate any potential false positives or negative that may emerge from noisy content analysis data.</li>
+                    </ol>
+                    <p>These three data streams are then triangulated, applying a set of rules to ensure the data sets are integrated in a way that leverages the strengths of the different approaches. This approach also helps to ensure that inherent weaknesses, gaps, or biases in one source is checked by the others. Though the basic data underpinning of the Index is already freely and widely available electronically, the strength of the analysis is in the methodological rigor and the systematic integration of a wide range of data sources. Final indicator scores for each country are then produced based on from this process. A panel review is then conducted by the research team of the final index to ensure all scores are proportionate across the country spectrum.</p>
+
+                    <p>The final FSI Index product is intended as an entry point into deeper interpretive analysis for the user – in line with the CAST framework approach. Though an index inherently ranks different countries – making some more fragile than others – ultimately the goal of the FSI is to measure trends in pressures within each individual state. By identifying the most salient pressures within a country, it creates the opportunity for deeper analysis and planning by policy makers and practitioners alike to strengthen each state’s resiliency. To that end, the following section outlines what each indicator seeks to measure in the Index – as well as providing guiding questions for deeper levels of analysis and inquiry by the user.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="page2" class="page-two page" style="display:none">
+            <div class="cdo-outer-container cdo-bg-white">
+                <div class="cdo-inner-container">
+                    <h1 class="header-title">Fragile States Index</h1>
+                    <h4>Source: <a href="https://fragilestatesindex.org" target="_blank">FUND FOR PEACE</a></h4>
+                    <!-- Homepage map with slider -->
+                    <div id="container" style="height: 75vh; width: 100%;"></div>
+                    <button class="ui button" id="playButton">Play</button>
+                    <div class="ui bottom aligned labeled slider"></div>
+                    <!-- <div id="result"></div> -->
+                </div>
+            </div>
+        </div>
+
+        <div id="page3" class="page-two page" style="display:none;">
+            <div class="cdo-outer-container cdo-bg-white">
+                <div class="cdo-inner-container">
+                    <h1 class="header-title">Country Dashboard</h1>
+                    <div class="w3-row">
+                        <div class="w3-col w3-half">
+                            <h4>Select Country:</h4>
+                            <select id = "country-dropdown"></select>
+                        </div>
+
+                        
+                    </div>
+
+                    <br>
+
+                    <!-- Metric Boxes -->
+                    <div class="grid-container-three">
+                        <div>
+                            <p>Overall Score</p>
+                            <span id="gc1" class="gc-span">1</span>
+                            <p>Score out of 120</p>
+                        </div>
+                        <div>
+                            <p>World Rank</p>
+                            <span id="gc2" class="gc-span">1</span>
+                            <p>Out of <span id="gc2-1"></span> Countries</p>
+                        </div>
+                        <div>
+                            <p>African Rank</p>
+                            <span id="gc3" class="gc-span">1</span>
+                            <p>Out of <span id="gc3-1"></span> Countries</p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="w3-row w3-margin-top">
+                        <h2 class="dd-text header2-title"></h2>
+                        <div class="w3-col w3-half">
+
+                            <div id="country-map" style="height: 90vh; width: 100%;"></div>
+
+                        </div>
+
+                        <div class="w3-col w3-half">
+
+                            <div id="country-totals" style="height: 45vh; width: 100%;"></div>
+                            <div id="country-differences" style="height: 45vh; width: 100%"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cdo-outer-container cdo-bg-one">
+                <div class="cdo-inner-container">
+                    <h1 class="header-title">Indicator Trends</h1>
+                    <p>The Fragile States Index is based on a conflict assessment framework – known as “CAST” – that was developed by the Fund for Peace nearly a quarter-century ago for assessing the vulnerability of states to collapse. The CAST framework was originally designed to measure this vulnerability and assess how it might affect projects in the field, and continues to be used widely by policy makers, field practitioners, and local community networks. The methodology uses both qualitative and quantitative indicators, relies on public source data, and produces quantifiable results.</p>
+
+                    <p>Twelve conflict risk indicators are used to measure the condition of a state at any given moment. The indicators provide a snapshot in time that can be measured against other snapshots in a time series to determine whether conditions are improving or worsening. Use the dropdown below to choose from the list of four broad indicators used in the CAST framework and also in the Fragile States Index.</p>
+
+                    <br>
+
+                    <div class="w3-row">
+                        <div class="w3-col w3-half">
+                            <h4>Select Indicator:</h4>
+                            <select id = "indicator-dropdown">
+                                <option value="Cohesion">Cohesion</option>
+                                <option value="Economic">Economic</option>
+                                <option value="Political">Political</option>
+                                <option value="Social">Social</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <h1 id="indicator-title"></h1>
+                    <h4>Source: <a href="https://fragilestatesindex.org" target="_blank">Fragile States Index</a></h4>
+
+                    <br>
+
+                    <div id="fsi-indicators">
+                        <div id="ind-one"></div>
+                        <div id="ind-two"></div>
+                        <div id="ind-three"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        
+
+		<script>
+
+            // Build Pages
+            // Function to make the divs appear as separate pages
+            function openPage(pageName) {
+              var i, x;
+              x = document.getElementsByClassName("page");
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+              }
+
+              document.getElementById(pageName).style.display = "block";
+            }
+
+
+
+
+
+            // Build Dropdown
+            // Declare the dropdown variable as the country-dropdown div
+            let dropdown = $('#country-dropdown');
+
+            // Empty the div
+            dropdown.empty()
+
+            // Create the function to use the json data to populate the dropdown options. The value is the ISO but the text is country
+            function populateDropdown(data) {
+                $.each(data, function(key, entry) {
+                    dropdown.append($('<option></option>').attr('value', entry.iso3).text(entry.country));
+                })
+            };
+
+            // Call the populate dropdown function with the dropdown json data
+            populateDropdown(fsiDropdownData);
+
+
+
+
+
+            // Get the ISO value from the dropdown list
+            function retrieveISO() {
+                var cdv = document.getElementById("country-dropdown").value;
+                return cdv
+            };
+
+
+
+
+
+            // Get the text value from the dropdown list
+            function retrieveText() {
+                var cdv = document.getElementById("country-dropdown");
+                var text = cdv.options[cdv.selectedIndex].text
+                return text
+            };
+
+            var selectedCountry = retrieveText();
+
+            document.getElementsByClassName("dd-text")[0].innerHTML = retrieveText();
+
+
+
+            // Populate the metric boxes with the scores, ranks, and denominator values
+            function populateBoxes() {
+                var cdv = document.getElementById("country-dropdown").value;
+
+                var ok = Object.keys(fsiContinentMaxData['Africa']).map(Number)
+                var mok = Math.max(...ok)
+
+                document.getElementById("gc1").innerHTML = fsiMetricData[cdv]['value']
+                document.getElementById("gc2").innerHTML = fsiMetricData[cdv]['rank']
+                document.getElementById("gc3").innerHTML = fsiMetricData[cdv]['rank_continent'] 
+                document.getElementById("gc3-1").innerHTML = fsiContinentMaxData['Africa'][mok]   
+                document.getElementById("gc2-1").innerHTML = fsiWorldMaxData[mok]       
+            };
+
+            // Call the function to make it work
+            populateBoxes();
+
+
+
+
+
+            // Get the data for the second map
+            function getMapData() {
+
+                var ok = Object.keys(fsiAnnualData).map(Number)
+                var mok = Math.max(...ok)
+
+                var sdv = fsiAnnualData[mok]       
+
+                return sdv
+            };
+
+            // Use the getMapData function and assign a variable name for its use in the map
+            var mData = getMapData();
+
+
+
+
+
+            // Create a function that uses the two dropdown variables and selects a subset of the country data based on selected indicator.  Data will be used in fragile state bar graph
+            function getCountryData() { 
+
+                var cdv = document.getElementById("country-dropdown").value;
+
+                var sdv = fsiCountryData[cdv]['Total']['Total']['value']
+
+                return sdv;
+            };
+
+            // Assign the output from the getCountryData function to the cData variable
+            var cData = getCountryData();
+
+
+
+
+
+
+            // Create a function to select the country data based on dropdown.  Data will be used in fragile state difference graph
+            function getDifferenceData() { 
+
+                var cdv = document.getElementById("country-dropdown").value;
+
+                var sdv = fsiDiffData[cdv]
+
+                return sdv;
+            };
+
+            // Assign the output from the getCountryData function to the cData variable
+            var diffData = getDifferenceData();
+
+
+
+
+
+            // Create a function that uses the two dropdown variables and selects a subset of the country data based on selected indicator.  Data will be used in the indicator graphs
+            function getIndicatorData() {
+
+                var cdv = document.getElementById("country-dropdown").value;
+
+                var idv = document.getElementById("indicator-dropdown").value;
+
+                document.getElementById("indicator-title").innerHTML = idv + ' Scores for ' + retrieveText();
+
+                var sdv = fsiCountryData[cdv][idv]
+
+                return sdv;
+            };
+
+            // Assign the output from the getCountryData function to the cData variable
+            var indData = getIndicatorData();
+
+
+
+
+
+            // Get the min and max year values to use throughout the script
+            function minmaxValues() {
+                var cdv = document.getElementById("country-dropdown").value;
+
+                var ok = Object.keys(fsiAnnualData).map(Number)
+                var minok = Math.min(...ok)
+                var maxok = Math.max(...ok)
+
+                return([minok, maxok]) 
+            };
+
+            // Assgin the min and max array to a variable name
+            var mmvalues = minmaxValues();
+
+
+
+
+
+            // This is where we build the button and slider for the map slider
+            let btncounter = document.querySelector("#playButton")
+
+            // Provides instructions on what to do once the button is clicked.  Essentially starts from min year and updates the data until it reaches the max year
+            btncounter.addEventListener('click', function() {
+                let counter = mmvalues[0]
+                const interval = setInterval( function(){
+                    // document.querySelector("#result").innerHTML = counter
+                    $('.ui.slider').slider('set value', counter)
+                    if (counter==mmvalues[1]) {
+                        clearInterval(interval);
+                        return
+                    } else {
+                        counter++
+                    }
+                }, 1000)
+                
+            })
+
+            // Builds the slider with all of the values from min to max year at a step of 1 year
+            $('.ui.slider')
+              .slider({
+                min: mmvalues[0],
+                max: mmvalues[1],
+                start: mmvalues[0],
+                step: 1,
+                onChange: function(value) {
+                    refreshChart(value)
+                  }
+              })
+            ;
+
+            // Updates the charte everytime a slider value changes
+            refreshChart = function(value) {
+                var chart1 = $('#container').highcharts()
+
+                chart1.series[0].update({
+                    data: fsiAnnualData[value]
+                }, false);
+
+                chart1.redraw(false);
+            }
+
+
+
+
+
+            // This is the map on the first page with the slider
+    		Highcharts.mapChart('container', {
+
+                chart: {
+                    map: 'custom/africa'
+                },
+
+                title: {
+                    text: ''
+                },
+
+                credits: {
+                	enabled: false
+                },
+
+                legend: {
+                	title: {
+                        text: 'Fragililty Score',
+                        style: {
+                            color: ( // theme
+                                Highcharts.defaultOptions &&
+                                Highcharts.defaultOptions.legend &&
+                                Highcharts.defaultOptions.legend.title &&
+                                Highcharts.defaultOptions.legend.title.style &&
+                                Highcharts.defaultOptions.legend.title.style.color
+                            ) || 'black'
+                        }
+                    },
+    				layout: 'vertical',
+    				align: 'left',
+    				floating: true
+    		    },
+
+                mapNavigation: {
+                    enabled: true,
+                    buttonOptions: {
+                        verticalAlign: 'bottom',
+                        align: 'right'
+                    },
+                    enableMouseWheelZoom: false
+                },
+
+                tooltip: {
+                    backgroundColor: 'none',
+                    borderWidth: 0,
+                    shadow: false,
+                    useHTML: true,
+                    padding: 0,
+                    pointFormat: '<span class="f32"><span class="flag {point.properties.hc-key}">' +
+                        '</span></span> {point.name}<br>' +
+                        '<span style="font-size:30px">Score: {point.value}</span>',
+                    positioner: function () {
+                        return { x: 0, y: 250 };
+                    }
+                },
+
+                colorAxis: {
+                    dataClasses: [{
+                        to: 10,
+            		    color: '#050268',
+            		    name: 'High Sustainability'
+                    }, {
+                        from: 10,
+                        to: 20,
+            		    color: '#13349C',
+            		    name: 'Medium Sustainability'
+                    }, {
+                        from: 20,
+                        to: 30,
+            		    color: '#3E67CF',
+            		    name: 'Low Sustainability'
+                    }, {
+                        from: 30,
+                        to: 40,
+            		    color: '#1B6600',
+            		    name: 'High Stability'
+                    }, {
+                        from: 40,
+                        to: 50,
+            		    color: '#2D9900',
+            		    name: 'Medium Stability'
+                    }, {
+                        from: 50,
+                        to: 60,
+            		    color: '#50CC21',
+            		    name: 'Low Stability'
+                    }, {
+                        from: 60,
+            		    to: 70,
+            		    color: '#FEFE00',
+            		    name: 'Low Warning'
+                    }, {
+                        from: 70,
+            		    to: 80,
+            		    color: '#F9BF00',
+            		    name: 'Medium Warning'
+                    }, {
+                        from: 80,
+            		    to: 90,
+            		    color: '#F67F15',
+            		    name: 'High Warning'
+                    }, {
+                        from: 90,
+            		    to: 100,
+            		    color: '#F42F00',
+            		    name: 'Low Alert'
+                    }, {
+                        from: 100,
+            		    to: 110,
+            		    color: '#C30000',
+            		    name: 'Medium Alert'
+                    }, {
+                        from: 110,
+            		    color: '#7A0000',
+            		    name: 'High Alert'
+                    }]
+                },
+
+                series: [{
+                    data: fsiAnnualData[mmvalues[0]],
+                    joinBy: ['iso-a3', 'iso3'],
+                    name: 'Fragile States Index Score',
+                    states: {
+                        hover: {
+                            color: '#a4edba'
+                        }
+                    }
+                }]
+            });
+
+
+
+
+
+            // This is the map on the second page.  It doesn't have all of the same functionality as the first map and only shows data for the most current year
+            Highcharts.mapChart('country-map', {
+
+                chart: {
+                    map: 'custom/africa'
+                },
+
+                title: {
+                    text: ''
+                },
+
+                credits: {
+                    enabled: false
+                },
+
+                mapNavigation: {
+                    enabled: false,
+                    buttonOptions: {
+                        verticalAlign: 'bottom',
+                        align: 'right'
+                    },
+                    enableMouseWheelZoom: false
+                },
+
+                legend: {
+                    title: {
+                        text: 'Fragililty Score',
+                        style: {
+                            color: ( // theme
+                                Highcharts.defaultOptions &&
+                                Highcharts.defaultOptions.legend &&
+                                Highcharts.defaultOptions.legend.title &&
+                                Highcharts.defaultOptions.legend.title.style &&
+                                Highcharts.defaultOptions.legend.title.style.color
+                            ) || 'black'
+                        }
+                    },
+                    layout: 'vertical',
+                    align: 'left',
+                    floating: true
+                },
+
+                colorAxis: {
+                    dataClasses: [{
+                        to: 10,
+                        color: '#050268',
+                        name: 'High Sustainability'
+                    }, {
+                        from: 10,
+                        to: 20,
+                        color: '#13349C',
+                        name: 'Medium Sustainability'
+                    }, {
+                        from: 20,
+                        to: 30,
+                        color: '#3E67CF',
+                        name: 'Low Sustainability'
+                    }, {
+                        from: 30,
+                        to: 40,
+                        color: '#1B6600',
+                        name: 'High Stability'
+                    }, {
+                        from: 40,
+                        to: 50,
+                        color: '#2D9900',
+                        name: 'Medium Stability'
+                    }, {
+                        from: 50,
+                        to: 60,
+                        color: '#50CC21',
+                        name: 'Low Stability'
+                    }, {
+                        from: 60,
+                        to: 70,
+                        color: '#FEFE00',
+                        name: 'Low Warning'
+                    }, {
+                        from: 70,
+                        to: 80,
+                        color: '#F9BF00',
+                        name: 'Medium Warning'
+                    }, {
+                        from: 80,
+                        to: 90,
+                        color: '#F67F15',
+                        name: 'High Warning'
+                    }, {
+                        from: 90,
+                        to: 100,
+                        color: '#F42F00',
+                        name: 'Low Alert'
+                    }, {
+                        from: 100,
+                        to: 110,
+                        color: '#C30000',
+                        name: 'Medium Alert'
+                    }, {
+                        from: 110,
+                        color: '#7A0000',
+                        name: 'High Alert'
+                    }]
+                },
+
+                series: [{
+                    data: mData,
+                    joinBy: ['iso-a3', 'iso3'],
+                    name: 'Fragile States Index Score',
+                    states: {
+                        hover: {
+                            color: '#a4edba'
+                        }
+                    }
+                }]
+            });
+
+
+
+
+
+            // This is fragile states index total score for a selected country
+            Highcharts.chart('country-totals', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Fragile States Index for ' + selectedCountry,
+                    align: 'left',
+                    margin: 50
+                },
+                subtitle: {
+                    text: 'Source: <a href="https://fragilestatesindex.org" target="_blank">Fragile States Index</a>',
+                    align: 'left'
+                },
+                xAxis: {
+                    categories: fsiYearData
+                },
+                yAxis: {
+                    min: 0,
+                    max: 120,
+                    title: {
+                        text: 'FSI Score',
+                        align: 'high'
+                    }
+                },
+                colorAxis: {
+                    dataClasses: [{
+                        to: 10,
+                        color: '#050268',
+                        name: 'High Sustainability'
+                    }, {
+                        from: 10,
+                        to: 20,
+                        color: '#13349C',
+                        name: 'Medium Sustainability'
+                    }, {
+                        from: 20,
+                        to: 30,
+                        color: '#3E67CF',
+                        name: 'Low Sustainability'
+                    }, {
+                        from: 30,
+                        to: 40,
+                        color: '#1B6600',
+                        name: 'High Stability'
+                    }, {
+                        from: 40,
+                        to: 50,
+                        color: '#2D9900',
+                        name: 'Medium Stability'
+                    }, {
+                        from: 50,
+                        to: 60,
+                        color: '#50CC21',
+                        name: 'Low Stability'
+                    }, {
+                        from: 60,
+                        to: 70,
+                        color: '#FEFE00',
+                        name: 'Low Warning'
+                    }, {
+                        from: 70,
+                        to: 80,
+                        color: '#F9BF00',
+                        name: 'Medium Warning'
+                    }, {
+                        from: 80,
+                        to: 90,
+                        color: '#F67F15',
+                        name: 'High Warning'
+                    }, {
+                        from: 90,
+                        to: 100,
+                        color: '#F42F00',
+                        name: 'Low Alert'
+                    }, {
+                        from: 100,
+                        to: 110,
+                        color: '#C30000',
+                        name: 'Medium Alert'
+                    }, {
+                        from: 110,
+                        color: '#7A0000',
+                        name: 'High Alert'
+                    }]
+                },
+                legend: {
+                    enabled: false
+                },
+                tooltip: {
+                    pointFormat: 'FSI Score: <b>{point.y:.1f}</b>'
+                },
+                series: [{
+                    name: 'Overall Score',
+                    // data: fsiCountryData['DZA']['Total']['Total']['value']  
+                    data: cData  
+                }]
+            });
+
+
+
+
+
+            // This is fragile states index total score for a selected country
+            Highcharts.chart('country-differences', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Year-on-Year Changes for ' + selectedCountry,
+                    align: 'left',
+                    margin: 50
+                },
+                subtitle: {
+                    text: 'Source: <a href="https://fragilestatesindex.org" target="_blank">Fragile States Index</a>',
+                    align: 'left'
+                },
+                xAxis: {
+                    categories: fsiYearData
+                },
+                yAxis: {
+                    title: {
+                        text: 'Changes in Scores',
+                        align: 'high'
+                    }
+                },
+                colorAxis: {
+                    dataClasses: [{
+                        to: 0,
+                        color: '#2D9900',
+                        name: 'Medium Stability'
+                    }, {
+                        from: 0,
+                        color: '#C30000',
+                        name: 'Medium Alert'
+                    }]
+                },
+                legend: {
+                    enabled: false
+                },
+                tooltip: {
+                    pointFormat: 'FSI Score Change: <b>{point.y:.1f}</b>'
+                },
+                series: [{
+                    name: 'FSI Score Change',
+                    // data: fsiCountryData['DZA']['Total']['Total']['value']  
+                    data: diffData  
+                }]
+            });
+
+
+
+
+            // Here we are adding all of the functions that synchronize the indicator charts.  It ensures that when you move your mouse the values are shown for each of the three graphs
+            ['mousemove', 'touchmove', 'touchstart'].forEach(function (eventType) {
+                document.getElementById('fsi-indicators').addEventListener(
+                    eventType,
+                    function (e) {
+                        var chart,
+                            point,
+                            i,
+                            event;
+
+                        for (i = 0; i < Highcharts.charts.length; i = i + 1) {
+                            chart = Highcharts.charts[i];
+                            // Find coordinates within the chart
+                            event = chart.pointer.normalize(e);
+                            // Get the hovered point
+                            point = chart.series[0].searchPoint(event, true);
+
+                            if (point) {
+                                point.highlight(e);
+                            }
+                        }
+                    }
+                );
+            });
+
+            Highcharts.Pointer.prototype.reset = function () {
+                return undefined;
+            };
+
+            Highcharts.Point.prototype.highlight = function (event) {
+                event = this.series.chart.pointer.normalize(event);
+                this.onMouseOver(); // Show the hover marker
+                this.series.chart.tooltip.refresh(this); // Show the tooltip
+                this.series.chart.xAxis[0].drawCrosshair(event, this); // Show the crosshair
+            };
+
+            function syncExtremes(e) {
+                var thisChart = this.chart;
+
+                if (e.trigger !== 'syncExtremes') { // Prevent feedback loop
+                    Highcharts.each(Highcharts.charts, function (chart) {
+                        if (chart !== thisChart) {
+                            if (chart.xAxis[0].setExtremes) { // It is null while updating
+                                chart.xAxis[0].setExtremes(
+                                    e.min,
+                                    e.max,
+                                    undefined,
+                                    false,
+                                    { trigger: 'syncExtremes' }
+                                );
+                            }
+                        }
+                    });
+                }
+            };
+
+
+
+
+
+            // This is the first indicator chart
+            Highcharts.chart('ind-one', {
+                chart: {
+                    height: 250,
+                    marginLeft: 40, // Keep all charts left aligned
+                    spacingTop: 20,
+                    spacingBottom: 20
+                },
+
+                title: {
+                    text: indData.cat1.category_name,
+                    align: 'left',
+                    margin: 50,
+                    x: 30
+                },
+
+                credits: {
+                    enabled: false
+                },
+
+                legend: {
+                    enabled: false
+                },
+
+                xAxis: {
+                    categories: fsiYearData,
+                    crosshair: true,
+                    events: {
+                        setExtremes: syncExtremes
+                    },
+                    labels: {
+                        format: '{value}'
+                    }
+                },
+
+                yAxis: {
+                    title: {
+                        text: null
+                    }
+                },
+
+                series: [{
+                    data: indData.cat1.value,
+                    name: indData.cat1.category_name,
+                    type: 'areaspline',
+                    fillOpacity: 0.3,
+                    color: '#36454F'             
+                }]
+            });
+
+
+
+
+
+            // Second indicator chart
+            Highcharts.chart('ind-two', {
+                chart: {
+                    height: 250,
+                    marginLeft: 40, // Keep all charts left aligned
+                    spacingTop: 20,
+                    spacingBottom: 20
+                },
+
+                title: {
+                    text: indData.cat2.category_name,
+                    align: 'left',
+                    margin: 50,
+                    x: 30
+                },
+
+                credits: {
+                    enabled: false
+                },
+
+                legend: {
+                    enabled: false
+                },
+
+                xAxis: {
+                    categories: fsiYearData,
+                    crosshair: true,
+                    events: {
+                        setExtremes: syncExtremes
+                    },
+                    labels: {
+                        format: '{value}'
+                    }
+                },
+
+                yAxis: {
+                    title: {
+                        text: null
+                    }
+                },
+
+                series: [{
+                    data: indData.cat2.value,
+                    name: indData.cat2.category_name,
+                    type: 'areaspline',
+                    fillOpacity: 0.3,
+                    color: '#36454F'
+                }]
+            });
+
+
+
+
+
+            // Third indicator chart
+            Highcharts.chart('ind-three', {
+                chart: {
+                    height: 250,
+                    marginLeft: 40, // Keep all charts left aligned
+                    spacingTop: 20,
+                    spacingBottom: 20
+                },
+
+                title: {
+                    text: indData.cat3.category_name,
+                    align: 'left',
+                    margin: 50,
+                    x: 30
+                },
+
+                credits: {
+                    enabled: false
+                },
+
+                legend: {
+                    enabled: false
+                },
+
+                xAxis: {
+                    categories: fsiYearData,
+                    crosshair: true,
+                    events: {
+                        setExtremes: syncExtremes
+                    },
+                    labels: {
+                        format: '{value}'
+                    }
+                },
+
+                yAxis: {
+                    title: {
+                        text: null
+                    }
+                },
+
+                series: [{
+                    data: indData.cat3.value,
+                    name: indData.cat3.category_name,
+                    type: 'areaspline',
+                    fillOpacity: 0.3,
+                    color: '#36454F'
+                }]
+            });
+
+
+
+
+
+            // Assigns the country dropdown element to a variable so that we can listen to changes
+            var select = document.getElementById('country-dropdown');
+
+            // Whenever a change happens to the dropdown, those changes will be managed in this function
+            select.addEventListener('change', (e) => {
+
+                document.getElementsByClassName("dd-text")[0].innerHTML = retrieveText();
+
+                populateBoxes()
+                
+                var chart0 = $("#country-totals").highcharts()
+                var chart1 = $("#ind-one").highcharts()
+                var chart2 = $("#ind-two").highcharts()
+                var chart3 = $("#ind-three").highcharts()
+                var chart4 = $("#country-differences").highcharts()
+
+                var data0 = getCountryData()
+                var data1 = getIndicatorData().cat1.value
+                var data2 = getIndicatorData().cat2.value
+                var data3 = getIndicatorData().cat3.value
+                var data4 = getDifferenceData()
+
+                // console.log(getDropdownValue()[0])
+
+                chart0.series[0].update({
+                    data: data0
+                });
+
+                chart1.series[0].update({
+                    data: data1.value,
+                    name: data1.category_name
+                });
+
+                chart2.series[0].update({
+                    data: data2.value,
+                    name: data2.category_name
+                });
+
+                chart3.series[0].update({
+                    data: data3.value,
+                    name: data3.category_name
+                });
+
+                chart4.series[0].update({
+                    data: data4
+                });
+
+                chart0.title.update({
+                    text: 'Fragile States Index for ' + retrieveText()
+                });
+
+                chart4.title.update({
+                    text: 'Year-on-Year Changes for ' + retrieveText()
+                });
+
+
+
+                chart0.redraw();
+                chart1.redraw();
+                chart2.redraw();
+                chart3.redraw();
+                chart4.redraw();
+            
+            });
+
+
+
+
+
+            // Assigns the indicator dropdown element to a variable so that we can listen to changes
+            var indselect = document.getElementById('indicator-dropdown');
+
+            // Whenever a change happens to the indicator dropdown, those changes will be managed in this function
+            indselect.addEventListener('change', (e) => {
+
+                getIndicatorData()
+                
+                var chart1 = $("#ind-one").highcharts()
+                var chart2 = $("#ind-two").highcharts()
+                var chart3 = $("#ind-three").highcharts()
+
+                var data1 = getIndicatorData().cat1
+                var data2 = getIndicatorData().cat2
+                var data3 = getIndicatorData().cat3
+
+                chart1.title.update({
+                    text: getIndicatorData().cat1.category_name
+                });
+
+                chart2.title.update({
+                    text: getIndicatorData().cat2.category_name
+                });
+
+                chart3.title.update({
+                    text: getIndicatorData().cat3.category_name
+                });
+
+                chart1.series[0].update({
+                    data: data1.value,
+                    name: data1.category_name
+                });
+
+                chart2.series[0].update({
+                    data: data2.value,
+                    name: data2.category_name
+                });
+
+                chart3.series[0].update({
+                    data: data3.value,
+                    name: data3.category_name
+                });
+
+                chart1.redraw();
+                chart2.redraw();
+                chart3.redraw();
+            
+            });
+
+		</script>
+	</body>
+</html>
